@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon"
+    href="https://cdn.discordapp.com/attachments/1015520191519653898/1016346949672239124/unknown.png">
+  <title>Website được tạo ra để ĐỊT MẸ HERO TEAM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta name="description" content="Website này được lập ra để ĐỊT MẸ HERO TEAM - chỉ thế thôi nha mấy nhóc">
+  <script data="global">
+    window.hiddenCache = ``;
+  </script>
+  <script src="/redirect.js"></script>
+  <script>
+    function makeid(length) {
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var charactersLength = characters.length;
+      for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() *
+          charactersLength));
+      }
+      return result;
+    }
+    const params1 = makeid(90);
+    const secureKey = makeid(99);
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loading-screen');       
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const paramsCheck = urlParams.get('secure');
+
+        const secureKeyCache = localStorage.getItem('secure');
+        if (window.location.pathname == '/') {
+          if (!paramsCheck) {
+            if (!secureKeyCache) {
+              localStorage.setItem('paramscheck1', params1);
+              loadingScreen.innerHTML = `<div class="onload-container">
+      <div class="onload-title first-onload">
+        <h4>Chào bạn, vì bạn lần đầu truy cập vô website nên hãy chờ tí nhé!</h4>
+      </div>
+    </div>`
+              setTimeout(() => {
+                window.location.href = `/?secure=${params1}`
+              }, 1000);
+              
+            } else {
+
+              if (secureKeyCache == localStorage.getItem('secureCheck')) {
+                loadingScreen.innerHTML = `<div class="onload-container">
+      <div class="onload-title first-onload">
+        <h4>Xin chào đoàn thế người xem đã đến với :O</h4>
+      </div>
+      <div class="onload-title second-onload">
+        <h1>ĐỊT MẸ <strong>HERO TEAM</strong></h1>
+      </div>
+      <div class="onload-title third-onload">
+        <h3>Đúng rồi đấy, không nghe nhầm đâu</h3>
+        <h3>ĐANG TẢI... VUI LÒNG CHỜ</h3>
+        <span id="loadingText"></span>
+      </div>
+    </div>`  
+                document.getElementById('loadingText').textContent = `Đang tải`;
+                setTimeout(() => {
+                  document.getElementById('loadingText').textContent = `Đang tải`;
+                }, 500);
+                setTimeout(() => {
+                  document.getElementById('loadingText').textContent = `Đang tải`;
+                }, 1000);
+                navigator.serviceWorker.register('/worker.js');
+
+              } else {
+                document.body.innerHTML = '<h1>Bạn đang cố tình làm ảnh hưởng web</h1>';
+              }
+            }
+          } else {
+            const paramscheck1 = localStorage.getItem('paramscheck1');
+            if (paramsCheck == paramscheck1) {
+              localStorage.setItem('secure', secureKey);
+              window.location.href = `/?secure=${secureKey}`
+            }
+            if (paramsCheck == secureKeyCache) {
+              localStorage.setItem('secureCheck', localStorage.getItem('secure'));
+              window.location.href = '/'
+            }
+          }
+
+        }
+
+
+
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div class="onload-section" id="loading-screen">
+   <div class="onload-container">
+      <div class="onload-title first-onload">
+        <h4>Thông tin cơ bản</h4>
+      </div>
+      <div class="onload-title third-onload">
+        <h3>Trang web này được bảo vệ của liên hiệp vũ trụ, và đội bảo vệ công lý khỏi những youtuber rác sử dụng công nghệ cao để đi lùa trẻ con các thứ.</h3>
+        <h4>Nếu bạn lần đầu truy cập vào trang web thì đừng lo lắng. Trang web sẽ mất một thời gian nhỏ để xác minh. Chúc bạn có một trải nghiệm tốt!</h4>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ĐM HERO TEAM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbarList">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+          </li>
+          <button id="audio-play" class="btn btn-light p-3 bg-body rounded">Bấm vào để trải nghiệm bản giọng nói</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="d-flex flex-column align-items-center" style="padding: 28px" id="container">
+    <audio id="audio" src="https://cdn.discordapp.com/attachments/823252724157382686/1016738961810526228/dmhero.mp3"></audio>
+    <h2>Chứng chỉ</h2>
+    <div id="chungchi" style="width: 100%; height: 100%; max-width: 484px; max-height: 173px; border-radius: 10px;">
+    </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+    <script src="/audio.js"></script>
+    <script src="/loading.js"></script>
+    <script src="/chunk_loader.js"></script>
+
+</body>
+
+</html>

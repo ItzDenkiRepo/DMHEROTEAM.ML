@@ -1,0 +1,72 @@
+* {
+  font-family: sans-serif, 'Ubuntu';
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+span {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.navbar-collapse {
+  transition: all 0.3s linear;
+}
+.navbarList {
+  align-items: center;
+  
+}
+details {
+  width: 100%;
+  padding: 18px;
+  background: #ededed;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+details > summary {
+  padding: 5px;
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.onload-section {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+    display: flex;
+}
+
+.onload-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 60%;
+    height: 60%;
+    text-align: center;
+}
+
+.onload-title { opacity: 0; }
+.first-onload { animation: opac 0.5s linear 1s forwards; }
+.second-onload { animation: opac 0.5s linear 2s forwards; }
+.third-onload { animation: opac 0.5s linear 3s forwards; }
+
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
