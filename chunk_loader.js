@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function() {
     alt="hit counter"></a>
 <!-- End of CuterCounter Code -->
 <h1 style="padding: 50px 30px">ĐỊT MẸ <b>HERO TEAM</b></h1>
-`+ window.hiddenCache + data + container.innerHTML + `<p style="font-size:11px;margin:1rem" aria-hidden="true"> địt mẹ hero team, hẻo team rác, con chó hẻo, hẻomc rác, anti cheat 1 tỷ, tỷ tiền ac, 3 ac bị bypass
+`+ window.hiddenCache + data + container.innerHTML + `<p style="font-size:11px;margin:1rem" aria-hidden="true"> địt mẹ hero team, hẻo team rác, con chó hẻo
 </p>`;
 
   })
